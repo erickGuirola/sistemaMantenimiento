@@ -2,7 +2,25 @@
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
   <persistence-unit name="com.mycompany_sistemaMantenimiento_war_1.0-SNAPSHOTPU" transaction-type="JTA">
     <jta-data-source>jdbc/mantenimiento</jta-data-source>
-    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <class>ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.BitacoraDeFallas</class>
+    <class>ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.Equipo</class>
+    <class>ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.EstadoOrdenTrabajo</class>
+    <class>ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.Falla</class>
+    <class>ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.MaterialesInsumos</class>
+    <class>ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.OrdenCompra</class>
+    <class>ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.OrdenTrabajo</class>
+    <class>ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.Partes</class>
+    <class>ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.PartesPorEquipo</class>
+    <class>ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.Procedimiento</class>
+    <class>ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.ProcedimientoPorEquipo</class>
+    <class>ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.Programacion</class>
+    <class>ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.Proveedores</class>
+    <class>ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.ProveedoresPorInsumo</class>
+    <class>ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.RecursoHumano</class>
+    <class>ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.TipoFalla</class>
+    <class>ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.TipoMantenimiento</class>
+    <class>ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.TipoProgramacion</class>
+    <exclude-unlisted-classes>true</exclude-unlisted-classes>
     <properties/>
   </persistence-unit>
 </persistence>

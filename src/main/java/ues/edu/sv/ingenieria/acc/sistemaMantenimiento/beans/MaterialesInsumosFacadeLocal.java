@@ -30,4 +30,7 @@ public interface MaterialesInsumosFacadeLocal {
 
     int count();
     
+    
+    
 }
+
