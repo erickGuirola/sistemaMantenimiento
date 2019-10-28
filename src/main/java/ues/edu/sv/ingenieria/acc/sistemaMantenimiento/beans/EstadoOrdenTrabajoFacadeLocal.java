@@ -14,20 +14,20 @@ import ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.EstadoOrdenTr
  * @author erick
  */
 @Local
-public interface EstadoOrdenTrabajoFacadeLocal {
+public interface EstadoOrdenTrabajoFacadeLocal extends AbstractFacadeInterface<EstadoOrdenTrabajo> {
 
-    void create(EstadoOrdenTrabajo estadoOrdenTrabajo);
-
-    void edit(EstadoOrdenTrabajo estadoOrdenTrabajo);
-
-    void remove(EstadoOrdenTrabajo estadoOrdenTrabajo);
-
-    EstadoOrdenTrabajo find(Object id);
-
-    List<EstadoOrdenTrabajo> findAll();
-
-    List<EstadoOrdenTrabajo> findRange(int[] range);
-
-    int count();
-    
+//    void create(EstadoOrdenTrabajo estadoOrdenTrabajo);
+//
+//    void edit(EstadoOrdenTrabajo estadoOrdenTrabajo);
+//
+//    void remove(EstadoOrdenTrabajo estadoOrdenTrabajo);
+//
+//    EstadoOrdenTrabajo find(Object id);
+//
+//    List<EstadoOrdenTrabajo> findAll();
+//
+//    List<EstadoOrdenTrabajo> findRange(int[] range);
+//
+//    int count();
+//    
 }

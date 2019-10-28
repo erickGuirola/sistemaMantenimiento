@@ -14,20 +14,20 @@ import ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.OrdenCompra;
  * @author erick
  */
 @Local
-public interface OrdenCompraFacadeLocal {
+public interface OrdenCompraFacadeLocal extends AbstractFacadeInterface<OrdenCompra>{
 
-    void create(OrdenCompra ordenCompra);
-
-    void edit(OrdenCompra ordenCompra);
-
-    void remove(OrdenCompra ordenCompra);
-
-    OrdenCompra find(Object id);
-
-    List<OrdenCompra> findAll();
-
-    List<OrdenCompra> findRange(int[] range);
-
-    int count();
+//    void create(OrdenCompra ordenCompra);
+//
+//    void edit(OrdenCompra ordenCompra);
+//
+//    void remove(OrdenCompra ordenCompra);
+//
+//    OrdenCompra find(Object id);
+//
+//    List<OrdenCompra> findAll();
+//
+//    List<OrdenCompra> findRange(int[] range);
+//
+//    int count();
     
 }

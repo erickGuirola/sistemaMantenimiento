@@ -14,20 +14,20 @@ import ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.Proveedores;
  * @author erick
  */
 @Local
-public interface ProveedoresFacadeLocal {
+public interface ProveedoresFacadeLocal  extends AbstractFacadeInterface<Proveedores>{
 
-    void create(Proveedores proveedores);
-
-    void edit(Proveedores proveedores);
-
-    void remove(Proveedores proveedores);
-
-    Proveedores find(Object id);
-
-    List<Proveedores> findAll();
-
-    List<Proveedores> findRange(int[] range);
-
-    int count();
+//    void create(Proveedores proveedores);
+//
+//    void edit(Proveedores proveedores);
+//
+//    void remove(Proveedores proveedores);
+//
+//    Proveedores find(Object id);
+//
+//    List<Proveedores> findAll();
+//
+//    List<Proveedores> findRange(int[] range);
+//
+//    int count();
     
 }

@@ -14,21 +14,21 @@ import ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.MaterialesIns
  * @author erick
  */
 @Local
-public interface MaterialesInsumosFacadeLocal {
+public interface MaterialesInsumosFacadeLocal extends AbstractFacadeInterface<MaterialesInsumos>{
 
-    void create(MaterialesInsumos materialesInsumos);
-
-    void edit(MaterialesInsumos materialesInsumos);
-
-    void remove(MaterialesInsumos materialesInsumos);
-
-    MaterialesInsumos find(Object id);
-
-    List<MaterialesInsumos> findAll();
-
-    List<MaterialesInsumos> findRange(int[] range);
-
-    int count();
+//    void create(MaterialesInsumos materialesInsumos);
+//
+//    void edit(MaterialesInsumos materialesInsumos);
+//
+//    void remove(MaterialesInsumos materialesInsumos);
+//
+//    MaterialesInsumos find(Object id);
+//
+//    List<MaterialesInsumos> findAll();
+//
+//    List<MaterialesInsumos> findRange(int[] range);
+//
+//    int count();
     
     
     

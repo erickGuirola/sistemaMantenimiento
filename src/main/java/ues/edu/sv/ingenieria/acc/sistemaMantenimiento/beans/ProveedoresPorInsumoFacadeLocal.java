@@ -14,20 +14,20 @@ import ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.ProveedoresPo
  * @author erick
  */
 @Local
-public interface ProveedoresPorInsumoFacadeLocal {
+public interface ProveedoresPorInsumoFacadeLocal  extends AbstractFacadeInterface<ProveedoresPorInsumo>{
 
-    void create(ProveedoresPorInsumo proveedoresPorInsumo);
-
-    void edit(ProveedoresPorInsumo proveedoresPorInsumo);
-
-    void remove(ProveedoresPorInsumo proveedoresPorInsumo);
-
-    ProveedoresPorInsumo find(Object id);
-
-    List<ProveedoresPorInsumo> findAll();
-
-    List<ProveedoresPorInsumo> findRange(int[] range);
-
-    int count();
+//    void create(ProveedoresPorInsumo proveedoresPorInsumo);
+//
+//    void edit(ProveedoresPorInsumo proveedoresPorInsumo);
+//
+//    void remove(ProveedoresPorInsumo proveedoresPorInsumo);
+//
+//    ProveedoresPorInsumo find(Object id);
+//
+//    List<ProveedoresPorInsumo> findAll();
+//
+//    List<ProveedoresPorInsumo> findRange(int[] range);
+//
+//    int count();
     
 }

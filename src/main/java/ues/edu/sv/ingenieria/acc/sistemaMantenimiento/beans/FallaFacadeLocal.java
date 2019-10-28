@@ -14,20 +14,20 @@ import ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.Falla;
  * @author erick
  */
 @Local
-public interface FallaFacadeLocal {
+public interface FallaFacadeLocal extends AbstractFacadeInterface<Falla>{
 
-    void create(Falla falla);
-
-    void edit(Falla falla);
-
-    void remove(Falla falla);
-
-    Falla find(Object id);
-
-    List<Falla> findAll();
-
-    List<Falla> findRange(int[] range);
-
-    int count();
+//    void create(Falla falla);
+//
+//    void edit(Falla falla);
+//
+//    void remove(Falla falla);
+//
+//    Falla find(Object id);
+//
+//    List<Falla> findAll();
+//
+//    List<Falla> findRange(int[] range);
+//
+//    int count();
     
 }

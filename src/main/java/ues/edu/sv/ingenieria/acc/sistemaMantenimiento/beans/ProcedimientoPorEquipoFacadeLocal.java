@@ -14,20 +14,20 @@ import ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.Procedimiento
  * @author erick
  */
 @Local
-public interface ProcedimientoPorEquipoFacadeLocal {
+public interface ProcedimientoPorEquipoFacadeLocal  extends AbstractFacadeInterface<ProcedimientoPorEquipo>{
 
-    void create(ProcedimientoPorEquipo procedimientoPorEquipo);
-
-    void edit(ProcedimientoPorEquipo procedimientoPorEquipo);
-
-    void remove(ProcedimientoPorEquipo procedimientoPorEquipo);
-
-    ProcedimientoPorEquipo find(Object id);
-
-    List<ProcedimientoPorEquipo> findAll();
-
-    List<ProcedimientoPorEquipo> findRange(int[] range);
-
-    int count();
+//    void create(ProcedimientoPorEquipo procedimientoPorEquipo);
+//
+//    void edit(ProcedimientoPorEquipo procedimientoPorEquipo);
+//
+//    void remove(ProcedimientoPorEquipo procedimientoPorEquipo);
+//
+//    ProcedimientoPorEquipo find(Object id);
+//
+//    List<ProcedimientoPorEquipo> findAll();
+//
+//    List<ProcedimientoPorEquipo> findRange(int[] range);
+//
+//    int count();
     
 }

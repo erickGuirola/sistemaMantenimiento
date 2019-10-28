@@ -14,20 +14,20 @@ import ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.RecursoHumano
  * @author erick
  */
 @Local
-public interface RecursoHumanoFacadeLocal {
+public interface RecursoHumanoFacadeLocal  extends AbstractFacadeInterface<RecursoHumano>{
 
-    void create(RecursoHumano recursoHumano);
-
-    void edit(RecursoHumano recursoHumano);
-
-    void remove(RecursoHumano recursoHumano);
-
-    RecursoHumano find(Object id);
-
-    List<RecursoHumano> findAll();
-
-    List<RecursoHumano> findRange(int[] range);
-
-    int count();
+//    void create(RecursoHumano recursoHumano);
+//
+//    void edit(RecursoHumano recursoHumano);
+//
+//    void remove(RecursoHumano recursoHumano);
+//
+//    RecursoHumano find(Object id);
+//
+//    List<RecursoHumano> findAll();
+//
+//    List<RecursoHumano> findRange(int[] range);
+//
+//    int count();
     
 }

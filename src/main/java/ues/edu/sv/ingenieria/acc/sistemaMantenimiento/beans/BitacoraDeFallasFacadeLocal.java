@@ -14,20 +14,21 @@ import ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.BitacoraDeFal
  * @author erick
  */
 @Local
-public interface BitacoraDeFallasFacadeLocal {
+public interface BitacoraDeFallasFacadeLocal extends AbstractFacadeInterface<BitacoraDeFallas> {
 
-    void create(BitacoraDeFallas bitacoraDeFallas);
-
-    void edit(BitacoraDeFallas bitacoraDeFallas);
-
-    void remove(BitacoraDeFallas bitacoraDeFallas);
-
-    BitacoraDeFallas find(Object id);
-
-    List<BitacoraDeFallas> findAll();
-
-    List<BitacoraDeFallas> findRange(int[] range);
-
-    int count();
+//    void create(BitacoraDeFallas bitacoraDeFallas);
+//
+//    void edit(BitacoraDeFallas bitacoraDeFallas);
+//
+//    void remove(BitacoraDeFallas bitacoraDeFallas);
+//
+//    BitacoraDeFallas find(Object id);
+//
+//    List<BitacoraDeFallas> findAll();
+//
+//    List<BitacoraDeFallas> findRange(int[] range);
+//
+//    int count();
+    
     
 }

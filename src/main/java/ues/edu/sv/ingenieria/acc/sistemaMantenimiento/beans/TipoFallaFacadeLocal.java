@@ -14,20 +14,20 @@ import ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.TipoFalla;
  * @author erick
  */
 @Local
-public interface TipoFallaFacadeLocal {
+public interface TipoFallaFacadeLocal extends AbstractFacadeInterface<TipoFalla>{
 
-    void create(TipoFalla tipoFalla);
-
-    void edit(TipoFalla tipoFalla);
-
-    void remove(TipoFalla tipoFalla);
-
-    TipoFalla find(Object id);
-
-    List<TipoFalla> findAll();
-
-    List<TipoFalla> findRange(int[] range);
-
-    int count();
+//    void create(TipoFalla tipoFalla);
+//
+//    void edit(TipoFalla tipoFalla);
+//
+//    void remove(TipoFalla tipoFalla);
+//
+//    TipoFalla find(Object id);
+//
+//    List<TipoFalla> findAll();
+//
+//    List<TipoFalla> findRange(int[] range);
+//
+//    int count();
     
 }

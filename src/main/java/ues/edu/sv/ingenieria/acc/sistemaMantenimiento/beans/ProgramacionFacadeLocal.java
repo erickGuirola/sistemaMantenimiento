@@ -14,20 +14,20 @@ import ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.Programacion;
  * @author erick
  */
 @Local
-public interface ProgramacionFacadeLocal {
+public interface ProgramacionFacadeLocal extends AbstractFacadeInterface<Programacion>{
 
-    void create(Programacion programacion);
-
-    void edit(Programacion programacion);
-
-    void remove(Programacion programacion);
-
-    Programacion find(Object id);
-
-    List<Programacion> findAll();
-
-    List<Programacion> findRange(int[] range);
-
-    int count();
-    
+//    void create(Programacion programacion);
+//
+//    void edit(Programacion programacion);
+//
+//    void remove(Programacion programacion);
+//
+//    Programacion find(Object id);
+//
+//    List<Programacion> findAll();
+//
+//    List<Programacion> findRange(int[] range);
+//
+//    int count();
+//    
 }

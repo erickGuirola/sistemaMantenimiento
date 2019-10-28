@@ -14,20 +14,20 @@ import ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.Partes;
  * @author erick
  */
 @Local
-public interface PartesFacadeLocal {
+public interface PartesFacadeLocal extends AbstractFacadeInterface<Partes>{
 
-    void create(Partes partes);
-
-    void edit(Partes partes);
-
-    void remove(Partes partes);
-
-    Partes find(Object id);
-
-    List<Partes> findAll();
-
-    List<Partes> findRange(int[] range);
-
-    int count();
+//    void create(Partes partes);
+//
+//    void edit(Partes partes);
+//
+//    void remove(Partes partes);
+//
+//    Partes find(Object id);
+//
+//    List<Partes> findAll();
+//
+//    List<Partes> findRange(int[] range);
+//
+//    int count();
     
 }

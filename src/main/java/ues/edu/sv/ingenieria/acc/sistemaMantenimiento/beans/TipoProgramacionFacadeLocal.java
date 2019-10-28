@@ -14,20 +14,20 @@ import ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.TipoProgramac
  * @author erick
  */
 @Local
-public interface TipoProgramacionFacadeLocal {
+public interface TipoProgramacionFacadeLocal  extends AbstractFacadeInterface<TipoProgramacion>{
 
-    void create(TipoProgramacion tipoProgramacion);
-
-    void edit(TipoProgramacion tipoProgramacion);
-
-    void remove(TipoProgramacion tipoProgramacion);
-
-    TipoProgramacion find(Object id);
-
-    List<TipoProgramacion> findAll();
-
-    List<TipoProgramacion> findRange(int[] range);
-
-    int count();
+//    void create(TipoProgramacion tipoProgramacion);
+//
+//    void edit(TipoProgramacion tipoProgramacion);
+//
+//    void remove(TipoProgramacion tipoProgramacion);
+//
+//    TipoProgramacion find(Object id);
+//
+//    List<TipoProgramacion> findAll();
+//
+//    List<TipoProgramacion> findRange(int[] range);
+//
+//    int count();
     
 }

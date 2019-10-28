@@ -14,20 +14,20 @@ import ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.OrdenTrabajo;
  * @author erick
  */
 @Local
-public interface OrdenTrabajoFacadeLocal {
+public interface OrdenTrabajoFacadeLocal extends AbstractFacadeInterface<OrdenTrabajo>{
 
-    void create(OrdenTrabajo ordenTrabajo);
-
-    void edit(OrdenTrabajo ordenTrabajo);
-
-    void remove(OrdenTrabajo ordenTrabajo);
-
-    OrdenTrabajo find(Object id);
-
-    List<OrdenTrabajo> findAll();
-
-    List<OrdenTrabajo> findRange(int[] range);
-
-    int count();
+//    void create(OrdenTrabajo ordenTrabajo);
+//
+//    void edit(OrdenTrabajo ordenTrabajo);
+//
+//    void remove(OrdenTrabajo ordenTrabajo);
+//
+//    OrdenTrabajo find(Object id);
+//
+//    List<OrdenTrabajo> findAll();
+//
+//    List<OrdenTrabajo> findRange(int[] range);
+//
+//    int count();
     
 }

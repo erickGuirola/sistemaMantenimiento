@@ -64,14 +64,14 @@ public class OrdenCompraFacadeREST extends AbstractFacade<OrdenCompra> {
 
     @POST
     @Override
-    @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    @Consumes(MediaType.APPLICATION_JSON)
     public void create(OrdenCompra entity) {
         super.create(entity);
     }
 
     @PUT
     @Path("{id}")
-    @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    @Consumes(MediaType.APPLICATION_JSON)
     public void edit(@PathParam("id") PathSegment id, OrdenCompra entity) {
         super.edit(entity);
     }
@@ -85,7 +85,7 @@ public class OrdenCompraFacadeREST extends AbstractFacade<OrdenCompra> {
 
     @GET
     @Path("{id}")
-    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    @Produces(MediaType.APPLICATION_JSON)
     public OrdenCompra find(@PathParam("id") PathSegment id) {
         ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.OrdenCompraPK key = getPrimaryKey(id);
         return super.find(key);
@@ -93,14 +93,14 @@ public class OrdenCompraFacadeREST extends AbstractFacade<OrdenCompra> {
 
     @GET
     @Override
-    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    @Produces(MediaType.APPLICATION_JSON)
     public List<OrdenCompra> findAll() {
         return super.findAll();
     }
 
     @GET
     @Path("{from}/{to}")
-    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    @Produces(MediaType.APPLICATION_JSON)
     public List<OrdenCompra> findRange(@PathParam("from") Integer from, @PathParam("to") Integer to) {
         return super.findRange(new int[]{from, to});
     }

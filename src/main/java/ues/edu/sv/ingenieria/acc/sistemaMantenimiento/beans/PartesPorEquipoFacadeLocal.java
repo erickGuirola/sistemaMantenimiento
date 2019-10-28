@@ -14,20 +14,20 @@ import ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.PartesPorEqui
  * @author erick
  */
 @Local
-public interface PartesPorEquipoFacadeLocal {
+public interface PartesPorEquipoFacadeLocal extends AbstractFacadeInterface<PartesPorEquipo>{
 
-    void create(PartesPorEquipo partesPorEquipo);
-
-    void edit(PartesPorEquipo partesPorEquipo);
-
-    void remove(PartesPorEquipo partesPorEquipo);
-
-    PartesPorEquipo find(Object id);
-
-    List<PartesPorEquipo> findAll();
-
-    List<PartesPorEquipo> findRange(int[] range);
-
-    int count();
+//    void create(PartesPorEquipo partesPorEquipo);
+//
+//    void edit(PartesPorEquipo partesPorEquipo);
+//
+//    void remove(PartesPorEquipo partesPorEquipo);
+//
+//    PartesPorEquipo find(Object id);
+//
+//    List<PartesPorEquipo> findAll();
+//
+//    List<PartesPorEquipo> findRange(int[] range);
+//
+//    int count();
     
 }

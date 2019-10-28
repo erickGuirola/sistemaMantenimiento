@@ -37,14 +37,14 @@ public class TipoProgramacionFacadeREST extends AbstractFacade<TipoProgramacion>
 
     @POST
     @Override
-    @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    @Consumes(MediaType.APPLICATION_JSON)
     public void create(TipoProgramacion entity) {
         super.create(entity);
     }
 
     @PUT
     @Path("{id}")
-    @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    @Consumes(MediaType.APPLICATION_JSON)
     public void edit(@PathParam("id") Integer id, TipoProgramacion entity) {
         super.edit(entity);
     }
@@ -57,14 +57,14 @@ public class TipoProgramacionFacadeREST extends AbstractFacade<TipoProgramacion>
 
     @GET
     @Path("{id}")
-    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    @Produces(MediaType.APPLICATION_JSON)
     public TipoProgramacion find(@PathParam("id") Integer id) {
         return super.find(id);
     }
 
     @GET
     @Override
-    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    @Produces(MediaType.APPLICATION_JSON)
     public List<TipoProgramacion> findAll() {
         return super.findAll();
     }
