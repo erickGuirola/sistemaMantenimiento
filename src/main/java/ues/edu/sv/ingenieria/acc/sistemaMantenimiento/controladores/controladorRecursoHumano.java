@@ -12,6 +12,7 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.enterprise.context.ApplicationScoped;
+import javax.faces.bean.ViewScoped;
 import ues.edu.sv.ingenieria.acc.sistemaMantenimiento.beans.RecursoHumanoFacadeLocal;
 import ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.RecursoHumano;
 
@@ -20,32 +21,30 @@ import ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.RecursoHumano
  * @author erick
  */
 @Named(value = "recursoHumano")
-@ApplicationScoped
+@ViewScoped
 public class controladorRecursoHumano implements Serializable {
 
-    private List<RecursoHumano> listaRecursos;  
+   
+ @EJB
+ private RecursoHumanoFacadeLocal recursoFacade;
 
-@EJB
-RecursoHumanoFacadeLocal recursoFacade;
+ private List<RecursoHumano> listaRecursos;  
+
+ 
 
     public controladorRecursoHumano() {
     }
     
     
+    
      @PostConstruct
     public void inicio(){
       
-      listaRecursos = recursoFacade.findAll();
-     
+     listaRecursos = recursoFacade.findAll();
+      
       
     }
 
-    
-    
-    
-    
-    
-    
     
     
     
@@ -72,11 +71,7 @@ RecursoHumanoFacadeLocal recursoFacade;
         this.recursoFacade = recursoFacade;
     }
 
-    
-    
-    
-    
-    
+   
 }
 
 

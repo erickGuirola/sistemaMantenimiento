@@ -22,14 +22,10 @@ public class ApplicationConfig extends Application {
         return resources;
     }
 
-    /**
-     * Do not modify addRestResourceClasses() method.
-     * It is automatically populated with
-     * all resources defined in the project.
-     * If required, comment out calling this method in getClasses().
-     */
+    
     private void addRestResourceClasses(Set<Class<?>> resources) {
         resources.add(ues.edu.sv.ingenieria.acc.sistemaMantenimiento.servicios.service.BitacoraDeFallasFacadeREST.class);
+        resources.add(ues.edu.sv.ingenieria.acc.sistemaMantenimiento.servicios.service.CorsFilter.class);
         resources.add(ues.edu.sv.ingenieria.acc.sistemaMantenimiento.servicios.service.EquipoFacadeREST.class);
         resources.add(ues.edu.sv.ingenieria.acc.sistemaMantenimiento.servicios.service.EstadoOrdenTrabajoFacadeREST.class);
         resources.add(ues.edu.sv.ingenieria.acc.sistemaMantenimiento.servicios.service.FallaFacadeREST.class);
