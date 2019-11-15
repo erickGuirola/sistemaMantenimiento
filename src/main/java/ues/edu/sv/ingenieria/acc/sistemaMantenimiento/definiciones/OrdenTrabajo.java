@@ -8,6 +8,7 @@ package ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -139,7 +140,7 @@ public class OrdenTrabajo implements Serializable {
         this.idTipoMantenimiento = idTipoMantenimiento;
     }
 
-    @XmlTransient
+    @JsonbTransient
     public List<Programacion> getProgramacionList() {
         return programacionList;
     }

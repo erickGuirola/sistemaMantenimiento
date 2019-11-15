@@ -7,6 +7,7 @@ package ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones;
 
 import java.io.Serializable;
 import java.util.List;
+import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -102,7 +103,7 @@ public class Partes implements Serializable {
         this.observaciones = observaciones;
     }
 
-    @XmlTransient
+    @JsonbTransient
     public List<PartesPorEquipo> getPartesPorEquipoList() {
         return partesPorEquipoList;
     }

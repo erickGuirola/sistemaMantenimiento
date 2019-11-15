@@ -2,7 +2,7 @@
 package ues.edu.sv.ingenieria.acc.sistemaMantenimiento.beans;
 
 import java.util.List;
-import ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.BitacoraDeFallas;
+
 
 /**
  *
@@ -10,7 +10,7 @@ import ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.BitacoraDeFal
  */
 public interface AbstractFacadeInterface<T> {
     
-     void create(T objeto);
+    void create(T objeto);
 
     void edit(T objeto);
 

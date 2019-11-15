@@ -1,12 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones;
 
 import java.io.Serializable;
 import java.util.List;
+import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -27,6 +24,7 @@ import javax.xml.bind.annotation.XmlTransient;
  *
  * @author erick
  */
+
 @Entity
 @Table(name = "recurso_humano", catalog = "mantenimiento", schema = "public")
 @XmlRootElement
@@ -37,6 +35,7 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "RecursoHumano.findByApellido", query = "SELECT r FROM RecursoHumano r WHERE r.apellido = :apellido")
     , @NamedQuery(name = "RecursoHumano.findByTelefono", query = "SELECT r FROM RecursoHumano r WHERE r.telefono = :telefono")
     , @NamedQuery(name = "RecursoHumano.findByObservaciones", query = "SELECT r FROM RecursoHumano r WHERE r.observaciones = :observaciones")})
+
 public class RecursoHumano implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -117,7 +116,7 @@ public class RecursoHumano implements Serializable {
         this.observaciones = observaciones;
     }
 
-    @XmlTransient
+    @JsonbTransient
     public List<OrdenTrabajo> getOrdenTrabajoList() {
         return ordenTrabajoList;
     }

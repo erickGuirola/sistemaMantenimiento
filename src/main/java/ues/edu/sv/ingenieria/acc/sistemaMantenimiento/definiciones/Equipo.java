@@ -7,6 +7,7 @@ package ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones;
 
 import java.io.Serializable;
 import java.util.List;
+import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -123,7 +124,7 @@ public class Equipo implements Serializable {
         this.observaciones = observaciones;
     }
 
-    @XmlTransient
+    @JsonbTransient
     public List<BitacoraDeFallas> getBitacoraDeFallasList() {
         return bitacoraDeFallasList;
     }
@@ -132,7 +133,7 @@ public class Equipo implements Serializable {
         this.bitacoraDeFallasList = bitacoraDeFallasList;
     }
 
-    @XmlTransient
+    @JsonbTransient
     public List<ProcedimientoPorEquipo> getProcedimientoPorEquipoList() {
         return procedimientoPorEquipoList;
     }
@@ -141,7 +142,7 @@ public class Equipo implements Serializable {
         this.procedimientoPorEquipoList = procedimientoPorEquipoList;
     }
 
-    @XmlTransient
+    @JsonbTransient
     public List<PartesPorEquipo> getPartesPorEquipoList() {
         return partesPorEquipoList;
     }
