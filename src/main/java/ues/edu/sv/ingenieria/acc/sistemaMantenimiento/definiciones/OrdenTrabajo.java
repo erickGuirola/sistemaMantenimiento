@@ -37,10 +37,12 @@ import javax.xml.bind.annotation.XmlTransient;
 @Table(name = "orden_trabajo", catalog = "mantenimiento", schema = "public")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "OrdenTrabajo.findAll", query = "SELECT o FROM OrdenTrabajo o")
+      @NamedQuery(name = "OrdenTrabajo.findAll", query = "SELECT o FROM OrdenTrabajo o")
     , @NamedQuery(name = "OrdenTrabajo.findByIdOrdenTrabajo", query = "SELECT o FROM OrdenTrabajo o WHERE o.idOrdenTrabajo = :idOrdenTrabajo")
     , @NamedQuery(name = "OrdenTrabajo.findByFechaGeneracion", query = "SELECT o FROM OrdenTrabajo o WHERE o.fechaGeneracion = :fechaGeneracion")
-    , @NamedQuery(name = "OrdenTrabajo.findByObservaciones", query = "SELECT o FROM OrdenTrabajo o WHERE o.observaciones = :observaciones")})
+    , @NamedQuery(name = "OrdenTrabajo.findByObservaciones", query = "SELECT o FROM OrdenTrabajo o WHERE o.observaciones = :observaciones")
+    , @NamedQuery(name = "OrdenTrabajo.findByEstado", query = "SELECT p.idOrdenTrabajo,p.fechaGeneracion, CONCAT(rh.nombre,'  ',rh.apellido),tm.mantenimiento,proc.procedimiento, t.estado FROM OrdenTrabajo p JOIN p.idEstado t JOIN p.idRecursoHumano rh JOIN p.idTipoMantenimiento tm JOIN p.idProcedimiento proc where t.idEstado = :idEstado")})
+
 public class OrdenTrabajo implements Serializable {
 
     private static final long serialVersionUID = 1L;

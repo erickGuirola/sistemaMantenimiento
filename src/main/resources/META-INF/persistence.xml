@@ -20,7 +20,7 @@
     <class>ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.TipoFalla</class>
     <class>ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.TipoMantenimiento</class>
     <class>ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.TipoProgramacion</class>
-    <exclude-unlisted-classes>true</exclude-unlisted-classes>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties/>
   </persistence-unit>
 </persistence>

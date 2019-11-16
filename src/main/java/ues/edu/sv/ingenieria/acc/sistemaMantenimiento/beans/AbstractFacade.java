@@ -7,6 +7,9 @@ package ues.edu.sv.ingenieria.acc.sistemaMantenimiento.beans;
 
 import java.util.List;
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
 
 /**
  *
@@ -62,4 +65,16 @@ public abstract class AbstractFacade<T> {
         return ((Long) q.getSingleResult()).intValue();
     }
     
+//     public List<T> findByEstado(int estado){
+//      EntityManagerFactory emfactory = Persistence.createEntityManagerFactory( "com.mycompany_sistemaMantenimiento_war_1.0-SNAPSHOTPU");
+//      EntityManager entitymanager = emfactory.createEntityManager();
+//      
+//      Query query = entitymanager.createNamedQuery("OrdenTrabajo.findByEstado");
+//      query.setParameter("idEstado", estado);
+//      
+//      List<T> list = query.getResultList( );
+//         
+//        return list;
+//     }   
+  
 }

@@ -55,13 +55,14 @@ public class OrdenTrabajoFacadeREST extends AbstractFacade<OrdenTrabajo> {
         super.remove(super.find(id));
     }
 
+    
     @GET
-    @Path("{id}")
+    @Path("{estado}")
     @Produces(MediaType.APPLICATION_JSON)
-    public OrdenTrabajo find(@PathParam("id") Integer id) {
-        return super.find(id);
+    public List<OrdenTrabajo> findByEstado(@PathParam("estado") Integer estado) {
+        return super.findByEstado(estado);
     }
-
+    
     @GET
     @Override
     @Produces(MediaType.APPLICATION_JSON)

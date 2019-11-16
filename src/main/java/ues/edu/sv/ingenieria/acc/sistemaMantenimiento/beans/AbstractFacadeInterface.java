@@ -21,11 +21,10 @@ public interface AbstractFacadeInterface<T> {
     List<T> findAll();
 
     List<T> findRange(int[] range);
+     
+//    List <T>findByEstado(int estado);
+     
 
     int count();
-    
-    
-    
-    
     
 }
