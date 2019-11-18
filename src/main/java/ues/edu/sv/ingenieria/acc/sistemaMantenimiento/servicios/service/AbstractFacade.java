@@ -15,6 +15,8 @@ import javax.persistence.Query;
 public abstract class AbstractFacade<T> {
 
     private Class<T> entityClass;
+    EntityManagerFactory emfactory = Persistence.createEntityManagerFactory( "com.mycompany_sistemaMantenimiento_war_1.0-SNAPSHOTPU");
+    EntityManager entitymanager = emfactory.createEntityManager();
 
     public AbstractFacade(Class<T> entityClass) {
         this.entityClass = entityClass;
@@ -55,9 +57,6 @@ public abstract class AbstractFacade<T> {
     }
 
     public List<T> findByEstado(int estado){
-      EntityManagerFactory emfactory = Persistence.createEntityManagerFactory( "com.mycompany_sistemaMantenimiento_war_1.0-SNAPSHOTPU");
-      EntityManager entitymanager = emfactory.createEntityManager();
-      
       Query query = entitymanager.createNamedQuery("OrdenTrabajo.findByEstado");
       query.setParameter("idEstado", estado);
       
@@ -65,6 +64,13 @@ public abstract class AbstractFacade<T> {
          
         return list;
      } 
+    
+    public List<T> findByProcedimientos(){
+      Query query = entitymanager.createNamedQuery("ProcedimientoPorEquipo.findByProcedimientoPorEquipo");
+      
+      List<T> list = query.getResultList();
+      return list;
+    }
     
     public int count() {
         javax.persistence.criteria.CriteriaQuery cq = getEntityManager().getCriteriaBuilder().createQuery();

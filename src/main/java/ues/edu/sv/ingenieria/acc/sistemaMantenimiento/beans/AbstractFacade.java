@@ -64,17 +64,6 @@ public abstract class AbstractFacade<T> {
         javax.persistence.Query q = getEntityManager().createQuery(cq);
         return ((Long) q.getSingleResult()).intValue();
     }
-    
-//     public List<T> findByEstado(int estado){
-//      EntityManagerFactory emfactory = Persistence.createEntityManagerFactory( "com.mycompany_sistemaMantenimiento_war_1.0-SNAPSHOTPU");
-//      EntityManager entitymanager = emfactory.createEntityManager();
-//      
-//      Query query = entitymanager.createNamedQuery("OrdenTrabajo.findByEstado");
-//      query.setParameter("idEstado", estado);
-//      
-//      List<T> list = query.getResultList( );
-//         
-//        return list;
-//     }   
+  
   
 }

@@ -32,7 +32,8 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "ProcedimientoPorEquipo.findByIdEquipo", query = "SELECT p FROM ProcedimientoPorEquipo p WHERE p.procedimientoPorEquipoPK.idEquipo = :idEquipo")
     , @NamedQuery(name = "ProcedimientoPorEquipo.findByIdMaterialInsumo", query = "SELECT p FROM ProcedimientoPorEquipo p WHERE p.procedimientoPorEquipoPK.idMaterialInsumo = :idMaterialInsumo")
     , @NamedQuery(name = "ProcedimientoPorEquipo.findByDescripcion", query = "SELECT p FROM ProcedimientoPorEquipo p WHERE p.descripcion = :descripcion")
-    , @NamedQuery(name = "ProcedimientoPorEquipo.findByObservaciones", query = "SELECT p FROM ProcedimientoPorEquipo p WHERE p.observaciones = :observaciones")})
+    , @NamedQuery(name = "ProcedimientoPorEquipo.findByObservaciones", query = "SELECT p FROM ProcedimientoPorEquipo p WHERE p.observaciones = :observaciones")
+    , @NamedQuery(name = "ProcedimientoPorEquipo.findByProcedimientoPorEquipo", query = "SELECT e.idEquipo ,e.equipo,mi.materialInsumo,p.procedimiento, pe.descripcion FROM ProcedimientoPorEquipo pe JOIN pe.procedimiento p JOIN pe.equipo e JOIN pe.materialesInsumos mi ")})
 public class ProcedimientoPorEquipo implements Serializable {
 
     private static final long serialVersionUID = 1L;

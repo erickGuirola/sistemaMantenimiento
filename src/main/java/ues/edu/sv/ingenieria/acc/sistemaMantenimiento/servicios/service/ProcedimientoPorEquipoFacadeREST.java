@@ -84,19 +84,18 @@ public class ProcedimientoPorEquipoFacadeREST extends AbstractFacade<Procedimien
     }
 
     @GET
-    @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public ProcedimientoPorEquipo find(@PathParam("id") PathSegment id) {
-        ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.ProcedimientoPorEquipoPK key = getPrimaryKey(id);
-        return super.find(key);
+    public List<ProcedimientoPorEquipo> findByProcedimientos() {
+      
+        return super.findByProcedimientos();
     }
 
-    @GET
-    @Override
-    @Produces(MediaType.APPLICATION_JSON)
-    public List<ProcedimientoPorEquipo> findAll() {
-        return super.findAll();
-    }
+//    @GET
+//    @Override
+//    @Produces(MediaType.APPLICATION_JSON)
+//    public List<ProcedimientoPorEquipo> findAll() {
+//        return super.findAll();
+//    }
 
     @GET
     @Path("{from}/{to}")
