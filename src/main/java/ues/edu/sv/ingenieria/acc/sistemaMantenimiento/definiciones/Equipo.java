@@ -125,6 +125,7 @@ public class Equipo implements Serializable {
     }
 
     @JsonbTransient
+    @XmlTransient
     public List<BitacoraDeFallas> getBitacoraDeFallasList() {
         return bitacoraDeFallasList;
     }
@@ -134,6 +135,7 @@ public class Equipo implements Serializable {
     }
 
     @JsonbTransient
+    @XmlTransient
     public List<ProcedimientoPorEquipo> getProcedimientoPorEquipoList() {
         return procedimientoPorEquipoList;
     }
@@ -143,6 +145,7 @@ public class Equipo implements Serializable {
     }
 
     @JsonbTransient
+    @XmlTransient
     public List<PartesPorEquipo> getPartesPorEquipoList() {
         return partesPorEquipoList;
     }

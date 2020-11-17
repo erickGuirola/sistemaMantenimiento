@@ -118,6 +118,7 @@ public class Proveedores implements Serializable {
     }
 
     @JsonbTransient
+    @XmlTransient
     public List<OrdenCompra> getOrdenCompraList() {
         return ordenCompraList;
     }
@@ -127,6 +128,7 @@ public class Proveedores implements Serializable {
     }
 
     @JsonbTransient
+    @XmlTransient
     public List<ProveedoresPorInsumo> getProveedoresPorInsumoList() {
         return proveedoresPorInsumoList;
     }

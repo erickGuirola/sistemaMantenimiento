@@ -10,11 +10,11 @@ import java.util.List;
  */
 public interface AbstractFacadeInterface<T> {
     
-    void create(T objeto);
-
-    void edit(T objeto);
-
-    void remove(T objeto);
+    boolean crear(T entity);
+    
+    boolean editar(T entity);
+    
+    boolean eliminar(T entity);
 
     T find(Object id);
 

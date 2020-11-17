@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ues.edu.sv.ingenieria.acc.sistemaMantenimiento.servicios.service;
+package ues.edu.sv.ingenieria.acc.sistemaMantenimiento.servicios.services;
 
 import java.util.List;
 import javax.ejb.Stateless;
@@ -18,34 +18,34 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.MaterialesInsumos;
+import ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.Procedimiento;
 
 /**
  *
  * @author erick
  */
 @Stateless
-@Path("materialesinsumos")
-public class MaterialesInsumosFacadeREST extends AbstractFacade<MaterialesInsumos> {
+@Path("procedimiento")
+public class ProcedimientoFacadeREST extends AbstractFacade<Procedimiento> {
 
     @PersistenceContext(unitName = "com.mycompany_sistemaMantenimiento_war_1.0-SNAPSHOTPU")
     private EntityManager em;
 
-    public MaterialesInsumosFacadeREST() {
-        super(MaterialesInsumos.class);
+    public ProcedimientoFacadeREST() {
+        super(Procedimiento.class);
     }
 
     @POST
     @Override
     @Consumes(MediaType.APPLICATION_JSON)
-    public void create(MaterialesInsumos entity) {
+    public void create(Procedimiento entity) {
         super.create(entity);
     }
 
     @PUT
     @Path("{id}")
     @Consumes(MediaType.APPLICATION_JSON)
-    public void edit(@PathParam("id") Integer id, MaterialesInsumos entity) {
+    public void edit(@PathParam("id") Integer id, Procedimiento entity) {
         super.edit(entity);
     }
 
@@ -58,21 +58,21 @@ public class MaterialesInsumosFacadeREST extends AbstractFacade<MaterialesInsumo
     @GET
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public MaterialesInsumos find(@PathParam("id") Integer id) {
+    public Procedimiento find(@PathParam("id") Integer id) {
         return super.find(id);
     }
 
     @GET
     @Override
     @Produces(MediaType.APPLICATION_JSON)
-    public List<MaterialesInsumos> findAll() {
+    public List<Procedimiento> findAll() {
         return super.findAll();
     }
 
     @GET
     @Path("{from}/{to}")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<MaterialesInsumos> findRange(@PathParam("from") Integer from, @PathParam("to") Integer to) {
+    public List<Procedimiento> findRange(@PathParam("from") Integer from, @PathParam("to") Integer to) {
         return super.findRange(new int[]{from, to});
     }
 

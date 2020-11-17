@@ -1,43 +1,77 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ues.edu.sv.ingenieria.acc.sistemaMantenimiento.beans;
 
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.Query;
+import javax.transaction.UserTransaction;
+
 
 /**
  *
  * @author erick
  */
+
 public abstract class AbstractFacade<T> {
 
     private Class<T> entityClass;
 
     public AbstractFacade(Class<T> entityClass) {
         this.entityClass = entityClass;
-    }
-
-    protected abstract EntityManager getEntityManager();
-     
-    public void create(T entity) {
-        getEntityManager().persist(entity);
         
     }
 
-    public void edit(T entity) {
-        getEntityManager().merge(entity);
+    protected abstract UserTransaction getTransaction();
+    protected abstract EntityManager getEntityManager();
+    
+    public boolean crear(T entity){
+        
+        try {
+            
+            UserTransaction transaccion = getTransaction();
+            transaccion.begin();
+            getEntityManager().persist(entity);
+            transaccion.commit();
+            return true;
+        
+        } catch (Exception e) {
+            Logger.getLogger(AbstractFacade.class.getName()).log(Level.SEVERE, null, e);
+            return false;
+        }
+        
+    }
+     
+    public boolean editar(T entity){
+        
+        try {
+            UserTransaction transaction = getTransaction();
+            transaction.begin();
+            getEntityManager().merge(entity);
+            transaction.commit();
+             return true;
+             
+        } catch (Exception e) {
+         Logger.getLogger(AbstractFacade.class.getName()).log(Level.SEVERE, null, e);
+         return false;
+        }
+        
+    }
+    
+    public boolean eliminar(T entity){
+        try {
+            UserTransaction transaction = getTransaction();
+            transaction.begin();;
+            getEntityManager().remove(getEntityManager().merge(entity));
+            transaction.commit();
+            return true;
+        } catch (Exception e) {
+            Logger.getLogger(AbstractFacade.class.getName()).log(Level.SEVERE, null, e);
+            return false;
+        }
     }
 
-    public void remove(T entity) {
-        getEntityManager().remove(getEntityManager().merge(entity));
-    }
-
+  
     public T find(Object id) {
         return getEntityManager().find(entityClass, id);
     }

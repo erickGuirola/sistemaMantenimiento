@@ -138,6 +138,7 @@ public class MaterialesInsumos implements Serializable {
     }
 
     @JsonbTransient
+    @XmlTransient
     public List<ProcedimientoPorEquipo> getProcedimientoPorEquipoList() {
         return procedimientoPorEquipoList;
     }
@@ -147,6 +148,7 @@ public class MaterialesInsumos implements Serializable {
     }
 
    @JsonbTransient
+    @XmlTransient
     public List<OrdenCompra> getOrdenCompraList() {
         return ordenCompraList;
     }
@@ -156,6 +158,7 @@ public class MaterialesInsumos implements Serializable {
     }
 
     @JsonbTransient
+    @XmlTransient
     public List<ProveedoresPorInsumo> getProveedoresPorInsumoList() {
         return proveedoresPorInsumoList;
     }

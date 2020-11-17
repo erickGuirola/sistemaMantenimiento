@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ues.edu.sv.ingenieria.acc.sistemaMantenimiento.servicios.service;
+package ues.edu.sv.ingenieria.acc.sistemaMantenimiento.servicios.services;
 
 import java.util.List;
 import javax.ejb.Stateless;
@@ -18,34 +18,34 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.TipoFalla;
+import ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.TipoMantenimiento;
 
 /**
  *
  * @author erick
  */
 @Stateless
-@Path("tipofalla")
-public class TipoFallaFacadeREST extends AbstractFacade<TipoFalla> {
+@Path("tipomantenimiento")
+public class TipoMantenimientoFacadeREST extends AbstractFacade<TipoMantenimiento> {
 
     @PersistenceContext(unitName = "com.mycompany_sistemaMantenimiento_war_1.0-SNAPSHOTPU")
     private EntityManager em;
 
-    public TipoFallaFacadeREST() {
-        super(TipoFalla.class);
+    public TipoMantenimientoFacadeREST() {
+        super(TipoMantenimiento.class);
     }
 
     @POST
     @Override
     @Consumes(MediaType.APPLICATION_JSON)
-    public void create(TipoFalla entity) {
+    public void create(TipoMantenimiento entity) {
         super.create(entity);
     }
 
     @PUT
     @Path("{id}")
     @Consumes(MediaType.APPLICATION_JSON)
-    public void edit(@PathParam("id") Integer id, TipoFalla entity) {
+    public void edit(@PathParam("id") Integer id, TipoMantenimiento entity) {
         super.edit(entity);
     }
 
@@ -58,21 +58,21 @@ public class TipoFallaFacadeREST extends AbstractFacade<TipoFalla> {
     @GET
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public TipoFalla find(@PathParam("id") Integer id) {
+    public TipoMantenimiento find(@PathParam("id") Integer id) {
         return super.find(id);
     }
 
     @GET
     @Override
     @Produces(MediaType.APPLICATION_JSON)
-    public List<TipoFalla> findAll() {
+    public List<TipoMantenimiento> findAll() {
         return super.findAll();
     }
 
     @GET
     @Path("{from}/{to}")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<TipoFalla> findRange(@PathParam("from") Integer from, @PathParam("to") Integer to) {
+    public List<TipoMantenimiento> findRange(@PathParam("from") Integer from, @PathParam("to") Integer to) {
         return super.findRange(new int[]{from, to});
     }
 

@@ -16,18 +16,7 @@ import ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.OrdenTrabajo;
 @Local
 public interface OrdenTrabajoFacadeLocal extends AbstractFacadeInterface<OrdenTrabajo>{
 
-//    void create(OrdenTrabajo ordenTrabajo);
-//
-//    void edit(OrdenTrabajo ordenTrabajo);
-//
-//    void remove(OrdenTrabajo ordenTrabajo);
-//
-//    OrdenTrabajo find(Object id);
-//
-//    List<OrdenTrabajo> findAll();
-//
-//    List<OrdenTrabajo> findRange(int[] range);
-//
-//    int count();
+    public List<OrdenTrabajo> findByEstado(int estado);
+    public List<OrdenTrabajo> findByHistorial();
     
 }

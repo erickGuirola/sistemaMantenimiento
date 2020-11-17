@@ -8,6 +8,7 @@ package ues.edu.sv.ingenieria.acc.sistemaMantenimiento.beans;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.transaction.UserTransaction;
 import ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.TipoProgramacion;
 
 /**
@@ -27,6 +28,11 @@ public class TipoProgramacionFacade extends AbstractFacade<TipoProgramacion> imp
 
     public TipoProgramacionFacade() {
         super(TipoProgramacion.class);
+    }
+
+    @Override
+    protected UserTransaction getTransaction() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

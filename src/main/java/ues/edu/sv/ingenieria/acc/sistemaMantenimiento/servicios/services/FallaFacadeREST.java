@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ues.edu.sv.ingenieria.acc.sistemaMantenimiento.servicios.service;
+package ues.edu.sv.ingenieria.acc.sistemaMantenimiento.servicios.services;
 
 import java.util.List;
 import javax.ejb.Stateless;
@@ -18,34 +18,34 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.Proveedores;
+import ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.Falla;
 
 /**
  *
  * @author erick
  */
 @Stateless
-@Path("proveedores")
-public class ProveedoresFacadeREST extends AbstractFacade<Proveedores> {
+@Path("falla")
+public class FallaFacadeREST extends AbstractFacade<Falla> {
 
     @PersistenceContext(unitName = "com.mycompany_sistemaMantenimiento_war_1.0-SNAPSHOTPU")
     private EntityManager em;
 
-    public ProveedoresFacadeREST() {
-        super(Proveedores.class);
+    public FallaFacadeREST() {
+        super(Falla.class);
     }
 
     @POST
     @Override
     @Consumes(MediaType.APPLICATION_JSON)
-    public void create(Proveedores entity) {
+    public void create(Falla entity) {
         super.create(entity);
     }
 
     @PUT
     @Path("{id}")
     @Consumes(MediaType.APPLICATION_JSON)
-    public void edit(@PathParam("id") Integer id, Proveedores entity) {
+    public void edit(@PathParam("id") Integer id, Falla entity) {
         super.edit(entity);
     }
 
@@ -58,21 +58,21 @@ public class ProveedoresFacadeREST extends AbstractFacade<Proveedores> {
     @GET
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Proveedores find(@PathParam("id") Integer id) {
+    public Falla find(@PathParam("id") Integer id) {
         return super.find(id);
     }
 
     @GET
     @Override
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Proveedores> findAll() {
+    public List<Falla> findAll() {
         return super.findAll();
     }
 
     @GET
     @Path("{from}/{to}")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Proveedores> findRange(@PathParam("from") Integer from, @PathParam("to") Integer to) {
+    public List<Falla> findRange(@PathParam("from") Integer from, @PathParam("to") Integer to) {
         return super.findRange(new int[]{from, to});
     }
 

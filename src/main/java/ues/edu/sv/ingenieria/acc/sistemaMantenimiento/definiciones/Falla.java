@@ -97,6 +97,7 @@ public class Falla implements Serializable {
     }
 
     @JsonbTransient
+    @XmlTransient
     public List<BitacoraDeFallas> getBitacoraDeFallasList() {
         return bitacoraDeFallasList;
     }

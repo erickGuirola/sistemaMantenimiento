@@ -1,5 +1,5 @@
 
-package ues.edu.sv.ingenieria.acc.sistemaMantenimiento.servicios.service;
+package ues.edu.sv.ingenieria.acc.sistemaMantenimiento.servicios.services;
 
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -15,8 +15,12 @@ import javax.persistence.Query;
 public abstract class AbstractFacade<T> {
 
     private Class<T> entityClass;
-    EntityManagerFactory emfactory = Persistence.createEntityManagerFactory( "com.mycompany_sistemaMantenimiento_war_1.0-SNAPSHOTPU");
-    EntityManager entitymanager = emfactory.createEntityManager();
+    
+    
+    //Creado para nuevos metodos agregados 
+    
+        EntityManagerFactory emfactory = Persistence.createEntityManagerFactory( "com.mycompany_sistemaMantenimiento_war_1.0-SNAPSHOTPU");
+        EntityManager entitymanager = emfactory.createEntityManager();
 
     public AbstractFacade(Class<T> entityClass) {
         this.entityClass = entityClass;
@@ -46,6 +50,8 @@ public abstract class AbstractFacade<T> {
         return getEntityManager().createQuery(cq).getResultList();
     }
 
+    
+    
     public List<T> findRange(int[] range) {
         javax.persistence.criteria.CriteriaQuery cq = getEntityManager().getCriteriaBuilder().createQuery();
         cq.select(cq.from(entityClass));
@@ -56,22 +62,7 @@ public abstract class AbstractFacade<T> {
         
     }
 
-    public List<T> findByEstado(int estado){
-      Query query = entitymanager.createNamedQuery("OrdenTrabajo.findByEstado");
-      query.setParameter("idEstado", estado);
-      
-      List<T> list = query.getResultList( );
-         
-        return list;
-     } 
-    
-    public List<T> findByProcedimientos(){
-      Query query = entitymanager.createNamedQuery("ProcedimientoPorEquipo.findByProcedimientoPorEquipo");
-      
-      List<T> list = query.getResultList();
-      return list;
-    }
-    
+   
     public int count() {
         javax.persistence.criteria.CriteriaQuery cq = getEntityManager().getCriteriaBuilder().createQuery();
         javax.persistence.criteria.Root<T> rt = cq.from(entityClass);

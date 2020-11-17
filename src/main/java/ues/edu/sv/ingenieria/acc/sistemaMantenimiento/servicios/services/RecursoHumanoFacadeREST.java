@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ues.edu.sv.ingenieria.acc.sistemaMantenimiento.servicios.service;
+package ues.edu.sv.ingenieria.acc.sistemaMantenimiento.servicios.services;
 
 import java.util.List;
 import javax.ejb.Stateless;
@@ -18,34 +18,34 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.OrdenTrabajo;
+import ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.RecursoHumano;
 
 /**
  *
  * @author erick
  */
 @Stateless
-@Path("ordentrabajo")
-public class OrdenTrabajoFacadeREST extends AbstractFacade<OrdenTrabajo> {
+@Path("recursohumano")
+public class RecursoHumanoFacadeREST extends AbstractFacade<RecursoHumano> {
 
     @PersistenceContext(unitName = "com.mycompany_sistemaMantenimiento_war_1.0-SNAPSHOTPU")
     private EntityManager em;
 
-    public OrdenTrabajoFacadeREST() {
-        super(OrdenTrabajo.class);
+    public RecursoHumanoFacadeREST() {
+        super(RecursoHumano.class);
     }
 
     @POST
     @Override
     @Consumes(MediaType.APPLICATION_JSON)
-    public void create(OrdenTrabajo entity) {
+    public void create(RecursoHumano entity) {
         super.create(entity);
     }
 
     @PUT
     @Path("{id}")
     @Consumes(MediaType.APPLICATION_JSON)
-    public void edit(@PathParam("id") Integer id, OrdenTrabajo entity) {
+    public void edit(@PathParam("id") Integer id, RecursoHumano entity) {
         super.edit(entity);
     }
 
@@ -55,25 +55,24 @@ public class OrdenTrabajoFacadeREST extends AbstractFacade<OrdenTrabajo> {
         super.remove(super.find(id));
     }
 
-    
     @GET
-    @Path("{estado}")
+    @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<OrdenTrabajo> findByEstado(@PathParam("estado") Integer estado) {
-        return super.findByEstado(estado);
+    public RecursoHumano find(@PathParam("id") Integer id) {
+        return super.find(id);
     }
-    
+
     @GET
     @Override
     @Produces(MediaType.APPLICATION_JSON)
-    public List<OrdenTrabajo> findAll() {
+    public List<RecursoHumano> findAll() {
         return super.findAll();
     }
 
     @GET
     @Path("{from}/{to}")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<OrdenTrabajo> findRange(@PathParam("from") Integer from, @PathParam("to") Integer to) {
+    public List<RecursoHumano> findRange(@PathParam("from") Integer from, @PathParam("to") Integer to) {
         return super.findRange(new int[]{from, to});
     }
 

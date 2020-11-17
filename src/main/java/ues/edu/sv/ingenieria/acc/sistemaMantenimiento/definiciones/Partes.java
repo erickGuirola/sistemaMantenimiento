@@ -104,6 +104,7 @@ public class Partes implements Serializable {
     }
 
     @JsonbTransient
+    @XmlTransient
     public List<PartesPorEquipo> getPartesPorEquipoList() {
         return partesPorEquipoList;
     }

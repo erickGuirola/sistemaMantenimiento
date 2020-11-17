@@ -28,6 +28,6 @@ public interface RecursoHumanoFacadeLocal  extends AbstractFacadeInterface<Recur
 //
 //    List<RecursoHumano> findRange(int[] range);
 //
-//    int count();
+//    int count(); 
     
 }

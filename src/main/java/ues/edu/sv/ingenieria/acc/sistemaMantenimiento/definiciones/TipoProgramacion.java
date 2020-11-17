@@ -92,6 +92,7 @@ public class TipoProgramacion implements Serializable {
     }
 
     @JsonbTransient
+    @XmlTransient
     public List<Programacion> getProgramacionList() {
         return programacionList;
     }

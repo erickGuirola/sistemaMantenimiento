@@ -92,6 +92,7 @@ public class TipoMantenimiento implements Serializable {
     }
 
     @JsonbTransient
+    @XmlTransient
     public List<OrdenTrabajo> getOrdenTrabajoList() {
         return ordenTrabajoList;
     }

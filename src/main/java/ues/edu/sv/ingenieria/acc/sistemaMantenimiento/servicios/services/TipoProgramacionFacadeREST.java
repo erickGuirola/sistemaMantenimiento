@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ues.edu.sv.ingenieria.acc.sistemaMantenimiento.servicios.service;
+package ues.edu.sv.ingenieria.acc.sistemaMantenimiento.servicios.services;
 
 import java.util.List;
 import javax.ejb.Stateless;
@@ -18,34 +18,34 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.Partes;
+import ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.TipoProgramacion;
 
 /**
  *
  * @author erick
  */
 @Stateless
-@Path("partes")
-public class PartesFacadeREST extends AbstractFacade<Partes> {
+@Path("tipoprogramacion")
+public class TipoProgramacionFacadeREST extends AbstractFacade<TipoProgramacion> {
 
     @PersistenceContext(unitName = "com.mycompany_sistemaMantenimiento_war_1.0-SNAPSHOTPU")
     private EntityManager em;
 
-    public PartesFacadeREST() {
-        super(Partes.class);
+    public TipoProgramacionFacadeREST() {
+        super(TipoProgramacion.class);
     }
 
     @POST
     @Override
     @Consumes(MediaType.APPLICATION_JSON)
-    public void create(Partes entity) {
+    public void create(TipoProgramacion entity) {
         super.create(entity);
     }
 
     @PUT
     @Path("{id}")
     @Consumes(MediaType.APPLICATION_JSON)
-    public void edit(@PathParam("id") Integer id, Partes entity) {
+    public void edit(@PathParam("id") Integer id, TipoProgramacion entity) {
         super.edit(entity);
     }
 
@@ -58,21 +58,21 @@ public class PartesFacadeREST extends AbstractFacade<Partes> {
     @GET
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Partes find(@PathParam("id") Integer id) {
+    public TipoProgramacion find(@PathParam("id") Integer id) {
         return super.find(id);
     }
 
     @GET
     @Override
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Partes> findAll() {
+    public List<TipoProgramacion> findAll() {
         return super.findAll();
     }
 
     @GET
     @Path("{from}/{to}")
-    @Produces(MediaType.APPLICATION_JSON)
-    public List<Partes> findRange(@PathParam("from") Integer from, @PathParam("to") Integer to) {
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    public List<TipoProgramacion> findRange(@PathParam("from") Integer from, @PathParam("to") Integer to) {
         return super.findRange(new int[]{from, to});
     }
 

@@ -106,6 +106,7 @@ public class Procedimiento implements Serializable {
     }
 
     @JsonbTransient
+    @XmlTransient
     public List<OrdenTrabajo> getOrdenTrabajoList() {
         return ordenTrabajoList;
     }
@@ -115,6 +116,7 @@ public class Procedimiento implements Serializable {
     }
 
     @JsonbTransient
+    @XmlTransient
     public List<ProcedimientoPorEquipo> getProcedimientoPorEquipoList() {
         return procedimientoPorEquipoList;
     }

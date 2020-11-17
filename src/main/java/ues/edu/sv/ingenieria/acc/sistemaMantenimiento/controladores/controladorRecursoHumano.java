@@ -9,10 +9,12 @@ import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.enterprise.context.ApplicationScoped;
-import javax.faces.bean.ViewScoped;
+import javax.faces.view.ViewScoped;
 import ues.edu.sv.ingenieria.acc.sistemaMantenimiento.beans.RecursoHumanoFacadeLocal;
 import ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.RecursoHumano;
 
@@ -20,7 +22,8 @@ import ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.RecursoHumano
  *
  * @author erick
  */
-@Named(value = "recursoHumano")
+
+@Named
 @ViewScoped
 public class controladorRecursoHumano implements Serializable {
 
@@ -29,32 +32,44 @@ public class controladorRecursoHumano implements Serializable {
  private RecursoHumanoFacadeLocal recursoFacade;
 
  private List<RecursoHumano> listaRecursos;  
-
  
+ //CONSTRUCTORES 
 
-    public controladorRecursoHumano() {
-    }
-    
-    
-    
-     @PostConstruct
-    public void inicio(){
-      
-     listaRecursos = recursoFacade.findAll();
-      
-      
-    }
-
-    
-    
-    
-    public controladorRecursoHumano(List<RecursoHumano> listaRecursos, RecursoHumanoFacadeLocal recursoFacade) {
+ public controladorRecursoHumano(List<RecursoHumano> listaRecursos, RecursoHumanoFacadeLocal recursoFacade) {
         this.listaRecursos = listaRecursos;
         this.recursoFacade = recursoFacade;
     }
+
+    public controladorRecursoHumano() {
+        
+        
+    }
+    
+ 
+   @PostConstruct
+   public void inicio(){
+      
+    }
+    
+   
+    public void generarListas(){
+        if(this.listaRecursos != null ||this.listaRecursos.isEmpty()){
+            try {
+                 if(this.recursoFacade != null){
+                     listaRecursos = recursoFacade.findAll();
+                 }
+            } catch (Exception e) {
+                Logger.getLogger(getClass().getName()).log(Level.SEVERE, e.getMessage(), e);
+            }
+        }
+    }
+    
+    
     
   
 
+    
+     //GETTERS Y SETTES
     public List<RecursoHumano> getListaRecursos() {
         return listaRecursos;
     }

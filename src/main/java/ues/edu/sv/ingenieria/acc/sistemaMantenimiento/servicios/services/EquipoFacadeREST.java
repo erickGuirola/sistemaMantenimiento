@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ues.edu.sv.ingenieria.acc.sistemaMantenimiento.servicios.service;
+package ues.edu.sv.ingenieria.acc.sistemaMantenimiento.servicios.services;
 
 import java.util.List;
 import javax.ejb.Stateless;
@@ -18,34 +18,34 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.EstadoOrdenTrabajo;
+import ues.edu.sv.ingenieria.acc.sistemaMantenimiento.definiciones.Equipo;
 
 /**
  *
  * @author erick
  */
 @Stateless
-@Path("estadoordentrabajo")
-public class EstadoOrdenTrabajoFacadeREST extends AbstractFacade<EstadoOrdenTrabajo> {
+@Path("equipo")
+public class EquipoFacadeREST extends AbstractFacade<Equipo> {
 
     @PersistenceContext(unitName = "com.mycompany_sistemaMantenimiento_war_1.0-SNAPSHOTPU")
     private EntityManager em;
 
-    public EstadoOrdenTrabajoFacadeREST() {
-        super(EstadoOrdenTrabajo.class);
+    public EquipoFacadeREST() {
+        super(Equipo.class);
     }
 
     @POST
     @Override
-    @Consumes(MediaType.APPLICATION_JSON)
-    public void create(EstadoOrdenTrabajo entity) {
+    @Consumes( MediaType.APPLICATION_JSON)
+    public void create(Equipo entity) {
         super.create(entity);
     }
 
     @PUT
     @Path("{id}")
     @Consumes(MediaType.APPLICATION_JSON)
-    public void edit(@PathParam("id") Integer id, EstadoOrdenTrabajo entity) {
+    public void edit(@PathParam("id") Integer id, Equipo entity) {
         super.edit(entity);
     }
 
@@ -58,21 +58,21 @@ public class EstadoOrdenTrabajoFacadeREST extends AbstractFacade<EstadoOrdenTrab
     @GET
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public EstadoOrdenTrabajo find(@PathParam("id") Integer id) {
+    public Equipo find(@PathParam("id") Integer id) {
         return super.find(id);
     }
 
     @GET
     @Override
     @Produces( MediaType.APPLICATION_JSON)
-    public List<EstadoOrdenTrabajo> findAll() {
+    public List<Equipo> findAll() {
         return super.findAll();
     }
 
     @GET
     @Path("{from}/{to}")
     @Produces( MediaType.APPLICATION_JSON)
-    public List<EstadoOrdenTrabajo> findRange(@PathParam("from") Integer from, @PathParam("to") Integer to) {
+    public List<Equipo> findRange(@PathParam("from") Integer from, @PathParam("to") Integer to) {
         return super.findRange(new int[]{from, to});
     }
 

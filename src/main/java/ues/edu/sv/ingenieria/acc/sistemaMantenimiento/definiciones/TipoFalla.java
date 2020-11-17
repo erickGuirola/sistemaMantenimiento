@@ -92,6 +92,7 @@ public class TipoFalla implements Serializable {
     }
 
     @JsonbTransient
+    @XmlTransient
     public List<Falla> getFallaList() {
         return fallaList;
     }
