@@ -93,6 +93,13 @@ public class OrdenTrabajoFacadeREST extends AbstractFacade<OrdenTrabajo> {
         return facadeLocalOrden.findAll();
     }
     
+    @GET
+    @Path("ordenes/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public OrdenTrabajo find(@PathParam("id") Integer id) {
+        return super.find(id);
+    }
+    
     
 
     @GET

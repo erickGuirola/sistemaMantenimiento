@@ -32,7 +32,7 @@ import javax.xml.bind.annotation.XmlTransient;
 @Table(name = "equipo", catalog = "mantenimiento", schema = "public")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Equipo.findAll", query = "SELECT e FROM Equipo e")
+    @NamedQuery(name = "Equipo.findAll", query = "SELECT e FROM Equipo e ORDER BY e.idEquipo DESC")
     , @NamedQuery(name = "Equipo.findByIdEquipo", query = "SELECT e FROM Equipo e WHERE e.idEquipo = :idEquipo")
     , @NamedQuery(name = "Equipo.findByEquipo", query = "SELECT e FROM Equipo e WHERE e.equipo = :equipo")
     , @NamedQuery(name = "Equipo.findByCantidad", query = "SELECT e FROM Equipo e WHERE e.cantidad = :cantidad")

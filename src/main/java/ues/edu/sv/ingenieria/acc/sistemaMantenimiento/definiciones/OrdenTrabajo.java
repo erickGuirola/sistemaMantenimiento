@@ -55,14 +55,26 @@ public class OrdenTrabajo implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "fecha_generacion", nullable = false)
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date fechaGeneracion;
+    
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "fecha_actualizacion", nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date fechaActualizacion;
+    
     @Size(max = 200)
     @Column(name = "observaciones", length = 200)
     private String observaciones;
     @JoinColumn(name = "id_estado", referencedColumnName = "id_estado", nullable = false)
     @ManyToOne(optional = false)
     private EstadoOrdenTrabajo idEstado;
+    
+    @JoinColumn(name = "id_equipo", referencedColumnName = "id_equipo", nullable = false)
+    @ManyToOne(optional = false)
+    private Equipo idEquipo;
+    
     @JoinColumn(name = "id_procedimiento", referencedColumnName = "id_procedimiento", nullable = false)
     @ManyToOne(optional = false)
     private Procedimiento idProcedimiento;
@@ -78,14 +90,14 @@ public class OrdenTrabajo implements Serializable {
     public OrdenTrabajo() {
     }
 
-    public OrdenTrabajo(Integer idOrdenTrabajo) {
-        this.idOrdenTrabajo = idOrdenTrabajo;
-    }
-
-    public OrdenTrabajo(Integer idOrdenTrabajo, Date fechaGeneracion) {
-        this.idOrdenTrabajo = idOrdenTrabajo;
-        this.fechaGeneracion = fechaGeneracion;
-    }
+//    public OrdenTrabajo(Integer idOrdenTrabajo) {
+//        this.idOrdenTrabajo = idOrdenTrabajo;
+//    }
+//
+//    public OrdenTrabajo(Integer idOrdenTrabajo, Date fechaGeneracion) {
+//        this.idOrdenTrabajo = idOrdenTrabajo;
+//        this.fechaGeneracion = fechaGeneracion;
+//    }
 
     public Integer getIdOrdenTrabajo() {
         return idOrdenTrabajo;
@@ -102,6 +114,14 @@ public class OrdenTrabajo implements Serializable {
     public void setFechaGeneracion(Date fechaGeneracion) {
         this.fechaGeneracion = fechaGeneracion;
     }
+    
+    public Date getFechaActualizacion() {
+        return fechaActualizacion;
+    }
+
+    public void setFechaActualizacion(Date fechaActualizacion) {
+        this.fechaActualizacion = fechaActualizacion;
+    }
 
     public String getObservaciones() {
         return observaciones;
@@ -117,6 +137,14 @@ public class OrdenTrabajo implements Serializable {
 
     public void setIdEstado(EstadoOrdenTrabajo idEstado) {
         this.idEstado = idEstado;
+    }
+    
+    public Equipo getIdEquipo() {
+        return idEquipo;
+    }
+
+    public void setIdEquipo(Equipo idEquipo) {
+        this.idEquipo = idEquipo;
     }
 
     public Procedimiento getIdProcedimiento() {
